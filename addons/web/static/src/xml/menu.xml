@@ -2,6 +2,14 @@
 <templates id="template" xml:space="preserve">
 
 <header t-name="Menu">
+    <nav class="o_main_navbar border-bottom-none">
+        <a class="navbar-brand">
+            <img src="/web/static/src/img/ciwec.png"/>
+        </a>
+        <div class="app-name"> 
+            <span> HealthSuite </span>
+        </div>
+    </nav>
     <nav class="o_main_navbar">
         <ul class="o_menu_apps"/>
         <a class="o_menu_brand" role="button"/>

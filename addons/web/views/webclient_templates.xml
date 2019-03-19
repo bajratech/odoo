@@ -734,6 +734,9 @@
             <div class="o_main">
                 <main class="o_main_content"/>
             </div>
+            <div class="footer">
+                <span> Powered by dhi: solutions </span>
+            </div>
         </t>
     </template>
 
