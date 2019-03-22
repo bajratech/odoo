@@ -2,12 +2,15 @@
 <templates id="template" xml:space="preserve">
 
 <header t-name="Menu">
-    <nav class="o_main_navbar border-bottom-none">
+    <nav class="navbar dhi-top-navbar border-bottom-none">
         <a class="navbar-brand">
-            <img src="/web/static/src/img/ciwec.png"/>
+            <img src="/web/static/src/img/dhi-logo.jpg"/>
+            <h1> HealthSuite 
+                <span>powered by dhi: Solutions</span>
+            </h1>
         </a>
-        <div class="app-name"> 
-            <span> HealthSuite </span>
+        <div class="client-logo"> 
+            <img src="/web/static/src/img/ciwec.png"/>           
         </div>
     </nav>
     <nav class="o_main_navbar">
