@@ -201,6 +201,51 @@
             <field name="sequence">102</field>
         </record>
 
+
+        <!-- DHI HEALTHSUITE MENU ACCESS -->
+        <record model="ir.module.category" id="module_category_dhi_user_access">
+            <field name="name">User Access</field>
+            <field name="description">Handle Hospital User Access</field>
+            <field name="sequence">51</field>
+        </record>
+
+        <!-- add groups to Dhi Health Suite -->
+        <record model="res.groups" id="dhi_group_receptionist">
+            <field name="category_id" ref="module_category_dhi_user_access"/>
+        </record>
+
+        <record model="res.groups" id="dhi_group_billing">
+            <field name="category_id" ref="module_category_dhi_user_access"/>
+        </record>
+
+        <record model="res.groups" id="dhi_group_nurse">
+            <field name="category_id" ref="module_category_dhi_user_access"/>
+        </record>
+
+        <record model="res.groups" id="dhi_group_doctor">
+            <field name="category_id" ref="module_category_dhi_user_access"/>
+        </record>
+
+        <record model="res.groups" id="dhi_group_inventory">
+            <field name="category_id" ref="module_category_dhi_user_access"/>
+        </record>
+
+        <record model="res.groups" id="dhi_group_lab">
+            <field name="category_id" ref="module_category_dhi_user_access"/>
+        </record>
+
+        <record model="res.groups" id="dhi_group_imaging">
+            <field name="category_id" ref="module_category_dhi_user_access"/>
+        </record>
+
+        <record model="res.groups" id="dhi_group_hr">
+            <field name="category_id" ref="module_category_dhi_user_access"/>
+        </record>
+
+        <record model="res.groups" id="dhi_group_administration">
+            <field name="category_id" ref="module_category_dhi_user_access"/>
+        </record>
+
         <!-- add applications to base groups -->
         <record model="res.groups" id="group_erp_manager">
             <field name="category_id" ref="module_category_administration"/>

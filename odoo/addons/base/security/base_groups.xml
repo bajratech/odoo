@@ -17,6 +17,45 @@
             <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
         </record>
 
+        <!-- DHI HEALTHSUITE USER GROUPS -->
+        <record model="res.groups" id="dhi_group_receptionist">
+            <field name="name">Receptionist</field> 
+            <!-- Receptionist = Receptionist + Billing -->
+        </record>
+        
+        <record model="res.groups" id="dhi_group_billing">
+            <field name="name">Billing</field>
+        </record>
+
+        <record model="res.groups" id="dhi_group_nurse">
+            <field name="name">Nurse</field>
+        </record>
+
+        <record model="res.groups" id="dhi_group_doctor">
+            <field name="name">Doctor</field>
+        </record>
+
+        <record model="res.groups" id="dhi_group_inventory">
+            <field name="name">Inventory Staff</field>
+        </record>
+
+        <record model="res.groups" id="dhi_group_lab">
+            <field name="name">Lab Staff</field>
+        </record>
+
+        <record model="res.groups" id="dhi_group_imaging">
+            <field name="name">Imaging Staff</field>
+        </record>
+
+        <record model="res.groups" id="dhi_group_hr">
+            <field name="name">HR</field>
+        </record>
+
+        <record model="res.groups" id="dhi_group_administration">
+            <field name="name">Administration</field>
+        </record>
+
+
         <record model="res.groups" id="group_user">
             <field name="name">Internal User</field>
         </record>
@@ -88,6 +127,9 @@
             <field name="key">base.template_portal_user_id</field>
             <field name="value" ref="template_portal_user_id"/>
         </record>
+
+
+
 
     </data>
 </odoo>
