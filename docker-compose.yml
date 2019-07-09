@@ -1,0 +1,20 @@
+version: '3'
+services:
+  db:
+    image: postgres:10
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports: 
+      - "5432"
+    env_file:
+      - '.env.dev'
+  dhi_health:
+    build: .
+    volumes: 
+      - .:/dhi_health
+    ports:
+      - "8069:8069"
+    command: /entrypoint.sh odoo 
+    links:
+      - db
+

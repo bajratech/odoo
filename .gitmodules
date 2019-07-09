@@ -1,0 +1,51 @@
+[submodule "custom_modules/dhi-dynamic-color"]
+	path = custom_modules/dhi-dynamic-color
+	url = git@git.bajrallc.com:gekkaBee/dhi-dynamic-color.git
+[submodule "custom_modules/dhi_stock_account"]
+	path = custom_modules/dhi_stock_account
+	url = git@git.bajrallc.com:rameshwordhakal/dhi_stock_account.git
+[submodule "custom_modules/dhi_point_of_sale"]
+	path = custom_modules/dhi_point_of_sale
+	url = git@git.bajrallc.com:rameshwordhakal/dhi_point_of_sale.git
+[submodule "custom_modules/dhi_notifications"]
+	path = custom_modules/dhi_notifications
+	url = git@git.bajrallc.com:rameshwordhakal/dhi_notifications.git
+[submodule "custom_modules/dhi_encounters_and_events"]
+	path = custom_modules/dhi_encounters_and_events
+	url = git@git.bajrallc.com:gekkaBee/dhi_encounters_and_events.git
+[submodule "custom_modules/dhi_hr"]
+	path = custom_modules/dhi_hr
+	url = git@git.bajrallc.com:gekkaBee/dhi_hr.git
+[submodule "custom_modules/dhi_hr_contract"]
+	path = custom_modules/dhi_hr_contract
+	url = git@git.bajrallc.com:gekkaBee/dhi_hr_contract.git
+[submodule "custom_modules/dhi_hr_attendance"]
+	path = custom_modules/dhi_hr_attendance
+	url = git@git.bajrallc.com:gekkaBee/dhi_hr_attendance.git
+[submodule "custom_modules/dhi_account"]
+	path = custom_modules/dhi_account
+	url = git@git.bajrallc.com:gekkaBee/dhi_account.git
+[submodule "custom_modules/dhi_stock"]
+	path = custom_modules/dhi_stock
+	url = git@git.bajrallc.com:rameshwordhakal/dhi_stock.git
+[submodule "custom_modules/dhi_mrp"]
+	path = custom_modules/dhi_mrp
+	url = git@git.bajrallc.com:sbasnet/dhi_mrp.git
+[submodule "custom_modules/dhi_billing"]
+	path = custom_modules/dhi_billing
+	url = git@git.bajrallc.com:gekkaBee/dhi_billing.git
+[submodule "custom_modules/dhi_appointments"]
+	path = custom_modules/dhi_appointments
+	url = git@git.bajrallc.com:rameshwordhakal/dhi_appointments.git
+[submodule "custom_modules/dhi_lab"]
+	path = custom_modules/dhi_lab
+	url = git@git.bajrallc.com:gekkaBee/dhi_lab.git
+[submodule "custom_modules/dhi_product"]
+	path = custom_modules/dhi_product
+	url = git@git.bajrallc.com:rameshwordhakal/dhi_product.git
+[submodule "custom_modules/dhi_purchase"]
+	path = custom_modules/dhi_purchase
+	url = git@git.bajrallc.com:gekkaBee/dhi_purchase.git
+[submodule "custom_modules/dhi_patient_record"]
+	path = custom_modules/dhi_patient_record
+	url = git@git.bajrallc.com:gekkaBee/dhi_patient_record.git
