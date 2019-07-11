@@ -1,6 +1,9 @@
 .o_form_view {
     background-color: $o-view-background-color;
-
+    
+    .btn-link {
+        padding: 0;
+    }
     // Utility classes
     .oe_form_box_info {
         @include o-webclient-padding($top: 5px, $bottom: 5px);
