@@ -28,7 +28,7 @@ class Currency(models.Model):
     # Note: 'code' column was removed as of v6.0, the 'name' should now hold the ISO code.
     name = fields.Char(string='Currency', size=3, required=True, help="Currency Code (ISO 4217)")
     symbol = fields.Char(help="Currency sign, to be used when printing amounts.", required=True)
-    rate = fields.Float(compute='_compute_current_rate', string='Current Rate', digits=(12, 6),
+    rate = fields.Float(compute='_compute_current_rate', string='Current Rate', digits=(12, 9),
                         help='The rate of the currency to the currency of rate 1.')
     rate_ids = fields.One2many('res.currency.rate', 'currency_id', string='Rates')
     rounding = fields.Float(string='Rounding Factor', digits=(12, 6), default=0.01)
@@ -98,7 +98,7 @@ class Currency(models.Model):
 
     @api.multi
     def amount_to_text(self, amount):
-        self.ensure_one()
+        # self.ensure_one()
         def _num2words(number, lang):
             try:
                 return num2words(number, lang=lang).title()
@@ -203,7 +203,9 @@ class Currency(models.Model):
         if self == to_currency:
             to_amount = from_amount
         else:
-            to_amount = from_amount * self._get_conversion_rate(self, to_currency, company, date)
+            # to_amount = from_amount * self._get_conversion_rate(self, to_currency, company, date)
+            to_amount = from_amount * self.rate
+        
         # apply rounding
         return to_currency.round(to_amount) if round else to_amount
 
@@ -246,7 +248,7 @@ class CurrencyRate(models.Model):
 
     name = fields.Date(string='Date', required=True, index=True,
                            default=lambda self: fields.Date.today())
-    rate = fields.Float(digits=(12, 6), default=1.0, help='The rate of the currency to the currency of rate 1')
+    rate = fields.Float(digits=(12, 9), default=1.0, help='The rate of the currency to the currency of rate 1')
     currency_id = fields.Many2one('res.currency', string='Currency', readonly=True)
     company_id = fields.Many2one('res.company', string='Company',
                                  default=lambda self: self.env.user.company_id)
