@@ -171,6 +171,9 @@ function login() {
 core.action_registry.add("login", login);
 
 function logout() {
+    sessionStorage.removeItem('login_user');
+    sessionStorage.removeItem('avatar_path');
+    sessionStorage.removeItem('employee_role');
     redirect('/web/session/logout');
     return $.Deferred();
 }

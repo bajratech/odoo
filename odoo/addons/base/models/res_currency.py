@@ -194,6 +194,7 @@ class Currency(models.Model):
            :param date: The nearest date from which we retriev the conversion rate.
            :param round: Round the result or not
         """
+        npr = self.search([('name', 'ilike', 'NPR')], limit=1)
         self, to_currency = self or to_currency, to_currency or self
         assert self, "convert amount from unknown currency"
         assert to_currency, "convert amount to unknown currency"
@@ -204,7 +205,10 @@ class Currency(models.Model):
             to_amount = from_amount
         else:
             # to_amount = from_amount * self._get_conversion_rate(self, to_currency, company, date)
-            to_amount = from_amount * self.rate
+            if to_currency == npr:
+                to_amount = from_amount * self.rate
+            else:
+                to_amount = from_amount / to_currency.rate
         # apply rounding
         return to_currency.round(to_amount) if round else to_amount
 
