@@ -172,6 +172,17 @@ class Registry(Mapping):
         return iter(self.models)
 
     def __getitem__(self, model_name):
+        # if model_name == "stock.location":
+        #     model_name = "dhi.stock.location"
+        # if model_name == "product.pricelist":
+        #     model_name = "dhi.product.pricelist"
+        # if model_name == "product.pricelist.item":
+        #     model_name = "dhi.product.pricelist.item"
+        # if model_name == "product.category":
+        #     model_name = "dhi.product.category"
+        # if model_name == "product.product":
+        #     model_name = "dhi.product.product"
+
         """ Return the model with the given name or raise KeyError if it doesn't exist."""
         return self.models[model_name]
 
