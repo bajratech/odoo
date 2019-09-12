@@ -725,6 +725,10 @@ def _call_kw_model_create(method, self, args, kwargs):
     if len(user_id):
         if hasattr(user_id, 'notify_success'):
             user_id.notify_success(message='Record Saved Successfully')
+            #get the employee using the res user_id
+            required_employee_id = self.env['dhi.hr.employee'].search([('user_id','=',user_id.id)])
+            for index,individual_args in enumerate(args):
+                args[index]['hospital_location'] = required_employee_id.work_location.id
     context, args, kwargs = split_context(method, args, kwargs)
     recs = self.with_context(context or {})
     _logger.debug("call %s.%s(%s)", recs, method.__name__, Params(args, kwargs))

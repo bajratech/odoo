@@ -24,6 +24,8 @@ def _add_magic_fields(self):
         compute='_compute_display_name'))
     add('reference_guid', fields.Char(
         string='GUID', default=lambda self: str(uuid.uuid4()), readonly=True))
+    #dhi hospital location
+    add('hospital_location', fields.Many2one('dhi.hospital.location'))
     #the is_created field has been added to be used to ensure that the active toggle is not shown while creating a record.
     add('is_created',fields.Boolean('Created', default=False, readonly=True))
     if self._log_access:
