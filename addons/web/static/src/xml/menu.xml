@@ -2,6 +2,11 @@
 <templates id="template" xml:space="preserve">
 
 <header t-name="Menu">
+    <script>
+        // to disable header in pop up window
+        if(window.isPopup)
+            $('body > header').css("display", "none");
+    </script>
     <nav class="navbar dhi-top-navbar border-bottom-none">
         <a class="navbar-brand">
             <img src="/web/static/src/img/dhi-logo.jpg"/>
