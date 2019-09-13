@@ -3606,6 +3606,8 @@ class BaseModel(MetaModel('DummyModel', (object,), {'_register': False})):
             columns0.append(('create_date', "%s", AsIs("(now() at time zone 'UTC')")))
             columns0.append(('write_uid', "%s", self._uid))
             columns0.append(('write_date', "%s", AsIs("(now() at time zone 'UTC')")))
+            #set company id of current logged in user to db table
+            columns0.append(('multi_company_id', "%s", self.env.user.company_id.id))
 
         for data in data_list:
             # determine column values
