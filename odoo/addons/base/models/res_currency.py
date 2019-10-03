@@ -194,9 +194,6 @@ class Currency(models.Model):
            :param date: The nearest date from which we retriev the conversion rate.
            :param round: Round the result or not
         """
-        exchange_rate = self.rate_ids.search([('name', '=', date)])
-        if not exchange_rate:
-            raise ValidationError("Exchange rate not found for the selected date.")
         npr = self.search([('name', 'ilike', 'NPR')], limit=1)
         self, to_currency = self or to_currency, to_currency or self
         assert self, "convert amount from unknown currency"
@@ -207,11 +204,13 @@ class Currency(models.Model):
         if self == to_currency:
             to_amount = from_amount
         else:
-            # to_amount = from_amount * self._get_conversion_rate(self, to_currency, company, date)
             if to_currency == npr:
-                rate = 1/self._get_conversion_rate(self, to_currency, company, date)
-                to_amount = from_amount * rate
+                rate_obj = self.rate_ids.search([('currency_id', '=', self.id),('name', '=', date)], limit=1)
+                to_amount = from_amount * rate_obj.rate
             else:
+                exchange_rate = self.rate_ids.search([('currency_id', '=', to_currency.id), ('name', '=', date)])
+                if not exchange_rate:
+                    raise ValidationError("Exchange rate not found for the selected date.")
                 rate = to_currency._get_conversion_rate(self, to_currency, company, date)
                 to_amount = from_amount / rate
         # apply rounding
