@@ -336,8 +336,10 @@ var EventDispatcherMixin = _.extend({}, ParentedMixin, {
     },
     _trigger_up: function (event) {
         var parent;
-        this.__edispatcherEvents.trigger(event.name, event);
-        if (!event.is_stopped() && (parent = this.getParent())) {
+        if (this.__edispatcherEvents != undefined){
+            this.__edispatcherEvents.trigger(event.name, event);
+        }
+        if (!event.is_stopped() && (parent = this.getParent()) && this.getParent()._trigger_up !== undefined ) {
             parent._trigger_up(event);
         }
     },
