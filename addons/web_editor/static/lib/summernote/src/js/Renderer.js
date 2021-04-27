@@ -880,12 +880,11 @@ define([
       var line_height_opt = ["height",["height"]]
       if (!JSON.stringify(options.toolbar).includes(JSON.stringify(font_name_opt))
       ){
-        // options.toolbar.push(["fontname",["fontname"]])
-        options.toolbar.splice(2,0,["fontname",["fontname"]])
+        options.toolbar.splice(2,0,font_name_opt)
       }
       if (!JSON.stringify(options.toolbar).includes(JSON.stringify(line_height_opt))
       ){
-        options.toolbar.splice(2,0,["height",["height"]])
+        options.toolbar.splice(2,0,line_height_opt)
       }
       
       for (var idx = 0, len = options.toolbar.length; idx < len; idx ++) {
