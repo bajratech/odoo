@@ -83,6 +83,6 @@ var _lt = core._lt;
 
 return {
     styleTags: ['p', 'pre', 'small', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote'],
-    fontSizes: [_lt('Default'), 8, 9, 10, 11, 12, 14, 18, 24, 36, 48, 62],
+    fontSizes: [_lt('Default'), 8, 9, 10, 11, 12,13, 14,16, 18, 24, 36, 48, 62],
 };
 });
