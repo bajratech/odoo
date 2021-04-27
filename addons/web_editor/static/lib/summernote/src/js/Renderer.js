@@ -876,6 +876,18 @@ define([
 
       //06. create Toolbar
       var $toolbar = $('<div class="note-toolbar panel-heading" />');
+      var font_name_opt = ["fontname",["fontname"]]
+      var line_height_opt = ["height",["height"]]
+      if (!JSON.stringify(options.toolbar).includes(JSON.stringify(font_name_opt))
+      ){
+        // options.toolbar.push(["fontname",["fontname"]])
+        options.toolbar.splice(2,0,["fontname",["fontname"]])
+      }
+      if (!JSON.stringify(options.toolbar).includes(JSON.stringify(line_height_opt))
+      ){
+        options.toolbar.splice(2,0,["height",["height"]])
+      }
+      
       for (var idx = 0, len = options.toolbar.length; idx < len; idx ++) {
         var groupName = options.toolbar[idx][0];
         var groupButtons = options.toolbar[idx][1];
